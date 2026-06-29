@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Menu, Workflow, Github, Search } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
+import { ShortcutsHelp } from '@/components/site/shortcuts-help'
 
 const openSearch = () => {
   window.dispatchEvent(new CustomEvent('n8n-school:open-search'))
@@ -17,6 +18,7 @@ const navLinks = [
   { href: '#lessons', label: 'Уроки' },
   { href: '#comparison', label: 'Сравнение' },
   { href: '#roadmap', label: 'Roadmap' },
+  { href: '#glossary', label: 'Глоссарий' },
   { href: '#faq', label: 'FAQ' },
 ]
 
@@ -107,6 +109,7 @@ export function Header() {
             <Search className="h-3.5 w-3.5" />
             <kbd className="hidden font-mono text-[10px] xl:inline">⌘K</kbd>
           </Button>
+          <ShortcutsHelp />
           <ThemeToggle />
           <Button asChild variant="ghost" size="sm">
             <a
@@ -133,6 +136,7 @@ export function Header() {
           >
             <Search className="h-4 w-4" />
           </Button>
+          <ShortcutsHelp />
           <ThemeToggle />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>

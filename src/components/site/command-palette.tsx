@@ -26,6 +26,7 @@ import {
   Github,
   ExternalLink,
   GraduationCap,
+  BookMarked,
 } from 'lucide-react'
 
 interface SearchItem {
@@ -149,6 +150,14 @@ export function CommandPalette() {
       action: () => goTo('#roadmap'),
       group: 'Разделы',
       keywords: 'roadmap путь уровни развитие',
+    },
+    {
+      label: 'Глоссарий терминов',
+      hint: 'Справочник ключевых понятий',
+      icon: BookMarked,
+      action: () => goTo('#glossary'),
+      group: 'Разделы',
+      keywords: 'глоссарий справочник термины определения',
     },
     {
       label: 'Частые вопросы',
