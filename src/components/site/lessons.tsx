@@ -17,6 +17,7 @@ import {
   Lightbulb,
   Circle,
   RotateCcw,
+  Share2,
 } from 'lucide-react'
 import { Reveal } from '@/components/site/reveal'
 
@@ -139,6 +140,12 @@ const levelColors: Record<Lesson['level'], string> = {
 }
 
 const STORAGE_KEY = 'n8n-school-completed-lessons'
+
+function estimateReadingTime(steps: string[], tip?: string): number {
+  const wordsPerStep = 25
+  const totalWords = steps.reduce((sum, step) => sum + step.split(/\s+/).length, 0) + (tip ? tip.split(/\s+/).length : 0)
+  return Math.max(1, Math.ceil(totalWords / wordsPerStep))
+}
 
 const loadCompleted = (): Set<string> => {
   if (typeof window === 'undefined') return new Set()
@@ -272,8 +279,15 @@ export function Lessons() {
               >
                 <AccordionTrigger className="px-5 py-4 hover:no-underline">
                   <div className="flex flex-1 items-center gap-4 text-left">
-                    <button
-                      type="button"
+                    <div
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault()
+                          toggle(lesson.id)
+                        }
+                      }}
                       onClick={(e) => {
                         e.stopPropagation()
                         toggle(lesson.id)
@@ -288,7 +302,7 @@ export function Lessons() {
                       ) : (
                         <Circle className="h-6 w-6 text-muted-foreground/40 hover:text--brand" />
                       )}
-                    </button>
+                    </div>
                     <span
                       className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-sm font-bold ${
                         isDone
@@ -321,6 +335,8 @@ export function Lessons() {
                           <Clock className="h-3 w-3" />
                           {lesson.duration}
                         </span>
+                        <span>·</span>
+                        <span>{estimateReadingTime(lesson.steps, lesson.tip)} мин чтения</span>
                       </div>
                     </div>
                   </div>

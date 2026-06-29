@@ -15,22 +15,25 @@ import { Roadmap } from '@/components/site/roadmap'
 import { Newsletter } from '@/components/site/newsletter'
 import { FAQ } from '@/components/site/faq'
 import { Glossary } from '@/components/site/glossary'
+import { Changelog } from '@/components/site/changelog'
 import { Resources, Footer } from '@/components/site/footer'
 import { BackToTop } from '@/components/site/back-to-top'
 import { ScrollProgress } from '@/components/site/scroll-progress'
 import { CommandPalette } from '@/components/site/command-palette'
 import { TableOfContents } from '@/components/site/table-of-contents'
 import { BuilderProvider } from '@/components/site/builder-context'
+import { ErrorBoundary } from '@/components/error-boundary'
 
 export default function Home() {
   return (
     <BuilderProvider>
+      <ErrorBoundary>
       <div className="flex min-h-screen flex-col bg-background">
         <ScrollProgress />
         <CommandPalette />
         <TableOfContents />
         <Header />
-        <main className="flex-1">
+        <main id="main-content" className="flex-1">
           <Hero />
           <WhatIsN8n />
           <Installation />
@@ -45,11 +48,13 @@ export default function Home() {
           <Glossary />
           <Newsletter />
           <FAQ />
+          <Changelog />
           <Resources />
         </main>
         <Footer />
         <BackToTop />
       </div>
+      </ErrorBoundary>
     </BuilderProvider>
   )
 }
