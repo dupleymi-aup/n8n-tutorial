@@ -130,7 +130,7 @@ export function Installation() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#ea4b71]">
+          <p className="text-sm font-semibold uppercase tracking-wider text--brand">
             Шаг 1
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -165,7 +165,7 @@ export function Installation() {
                   <Card>
                     <CardContent className="p-6 sm:p-8">
                       <div className="mb-6 flex items-center gap-3">
-                        <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#ea4b71]/10 text-[#ea4b71]">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-lg bg--brand/10 text--brand">
                           <Icon className="h-5 w-5" />
                         </span>
                         <div>

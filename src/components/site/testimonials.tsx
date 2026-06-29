@@ -67,7 +67,7 @@ const stats = [
     icon: Users,
     value: '350k+',
     label: 'активных пользователей n8n по миру',
-    color: 'text-[#ea4b71]',
+    color: 'text--brand',
   },
   {
     icon: TrendingUp,
@@ -88,7 +88,7 @@ export function Testimonials() {
     <section id="testimonials" className="scroll-mt-16 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#ea4b71]">
+          <p className="text-sm font-semibold uppercase tracking-wider text--brand">
             Социальное доказательство
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -103,7 +103,7 @@ export function Testimonials() {
 
         {/* Stats */}
         <Reveal delay={0.05} className="mx-auto mt-12 max-w-4xl">
-          <div className="grid grid-cols-1 gap-4 rounded-2xl border bg-gradient-to-br from-[#fff5f7] to-background p-6 dark:from-[#ea4b71]/5 sm:grid-cols-3 sm:p-8">
+          <div className="grid grid-cols-1 gap-4 rounded-2xl border bg-gradient-to-br from-[#fff5f7] to-background p-6 dark:from--brand/5 sm:grid-cols-3 sm:p-8">
             {stats.map((stat) => {
               const Icon = stat.icon
               return (
@@ -128,7 +128,7 @@ export function Testimonials() {
               key={t.author}
               className="flex h-full flex-col rounded-2xl border bg-card p-6 shadow-sm transition-all hover:shadow-md"
             >
-              <Quote className="h-7 w-7 text-[#ea4b71]/40" />
+              <Quote className="h-7 w-7 text--brand/40" />
               <p className="mt-3 flex-1 text-sm leading-relaxed text-foreground">
                 «{t.quote}»
               </p>

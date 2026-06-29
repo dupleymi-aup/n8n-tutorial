@@ -111,7 +111,7 @@ export function Examples() {
     <section id="examples" className="scroll-mt-16 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#ea4b71]">
+          <p className="text-sm font-semibold uppercase tracking-wider text--brand">
             Шаг 4
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -133,7 +133,7 @@ export function Examples() {
             onClick={() => setActiveTag(null)}
             className={
               activeTag === null
-                ? 'bg-[#ea4b71] text-white hover:bg-[#d63d61]'
+                ? 'bg--brand text-white hover:bg--brand-hover'
                 : ''
             }
           >
@@ -151,7 +151,7 @@ export function Examples() {
                 onClick={() => setActiveTag(isActive ? null : tag)}
                 className={
                   isActive
-                    ? 'bg-[#ea4b71] text-white hover:bg-[#d63d61]'
+                    ? 'bg--brand text-white hover:bg--brand-hover'
                     : ''
                 }
               >

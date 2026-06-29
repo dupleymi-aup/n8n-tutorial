@@ -14,7 +14,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden border-b bg-gradient-to-b from-[#fff5f7] via-background to-background dark:from-[#ea4b71]/5"
+      className="relative overflow-hidden border-b bg-gradient-to-b from-[#fff5f7] via-background to-background dark:from--brand/5"
     >
       {/* Decorative background */}
       <div
@@ -34,7 +34,7 @@ export function Hero() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left: text */}
           <div className="text-center lg:text-left">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#ea4b71]/30 bg-[#ea4b71]/5 px-4 py-1.5 text-xs font-medium text-[#c43560]">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border--brand/30 bg--brand/5 px-4 py-1.5 text-xs font-medium text--brand-dark">
               <Sparkles className="h-3.5 w-3.5" />
               Открытый код · Fair-code лицензия · Self-hosted
             </div>
@@ -55,7 +55,7 @@ export function Hero() {
               <Button
                 asChild
                 size="lg"
-                className="bg-[#ea4b71] text-white hover:bg-[#d63d61]"
+                className="bg--brand text-white hover:bg--brand-hover"
               >
                 <a href="#install">
                   <PlayCircle className="mr-2 h-5 w-5" />
@@ -188,7 +188,7 @@ export function Hero() {
               transition={{ delay: 1.2, duration: 0.6 }}
               className="absolute -left-4 top-1/3 hidden rounded-lg border bg-card px-3 py-1.5 text-xs font-medium shadow-md xl:block"
             >
-              <span className="text-[#ea4b71]">●</span> Real-time
+              <span className="text--brand">●</span> Real-time
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -216,7 +216,7 @@ function StatCard({
 }) {
   return (
     <div className="rounded-xl border bg-card/80 p-3 text-left shadow-sm backdrop-blur">
-      <span className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#ea4b71]/10 text-[#ea4b71]">
+      <span className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg--brand/10 text--brand">
         {icon}
       </span>
       <div className="text-lg font-bold text-foreground">{value}</div>

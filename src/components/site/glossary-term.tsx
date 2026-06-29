@@ -29,7 +29,7 @@ export function GlossaryTerm({
       <PopoverTrigger asChild>
         <button
           type="button"
-          className="inline-flex items-center gap-0.5 border-b border-dashed border-[#ea4b71]/40 font-medium text-[#ea4b71] decoration-dotted underline-offset-2 hover:border-[#ea4b71] hover:bg-[#ea4b71]/5"
+          className="inline-flex items-center gap-0.5 border-b border-dashed border--brand/40 font-medium text--brand decoration-dotted underline-offset-2 hover:border--brand hover:bg--brand/5"
           aria-describedby={open ? id : undefined}
           onClick={() => setOpen((v) => !v)}
         >
@@ -44,7 +44,7 @@ export function GlossaryTerm({
         id={id}
       >
         <div className="mb-1.5 flex items-center gap-1.5">
-          <span className="flex h-5 w-5 items-center justify-center rounded bg-[#ea4b71]/10 text-[#ea4b71]">
+          <span className="flex h-5 w-5 items-center justify-center rounded bg--brand/10 text--brand">
             <BookOpen className="h-3 w-3" />
           </span>
           <span className="font-semibold text-foreground">{term}</span>

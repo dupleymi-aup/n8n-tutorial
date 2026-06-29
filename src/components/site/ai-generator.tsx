@@ -89,13 +89,13 @@ export function AIGenerator() {
   return (
     <section
       id="ai-generator"
-      className="scroll-mt-16 border-y bg-gradient-to-b from-[#fff5f7] via-background to-background py-20 dark:from-[#ea4b71]/5 sm:py-28"
+      className="scroll-mt-16 border-y bg-gradient-to-b from-[#fff5f7] via-background to-background py-20 dark:from--brand/5 sm:py-28"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <Badge
             variant="outline"
-            className="mb-3 border-[#ea4b71]/30 bg-[#ea4b71]/5 text-[#c43560]"
+            className="mb-3 border--brand/30 bg--brand/5 text--brand-dark"
           >
             <Sparkles className="mr-1 h-3 w-3" />
             AI-помощник
@@ -135,7 +135,7 @@ export function AIGenerator() {
               <Button
                 onClick={generate}
                 disabled={loading || !prompt.trim()}
-                className="bg-[#ea4b71] text-white hover:bg-[#d63d61]"
+                className="bg--brand text-white hover:bg--brand-hover"
               >
                 {loading ? (
                   <>
@@ -163,7 +163,7 @@ export function AIGenerator() {
                       key={ex}
                       type="button"
                       onClick={() => setPrompt(ex)}
-                      className="rounded-lg border border-dashed border-border px-3 py-2 text-left text-xs text-muted-foreground transition-colors hover:border-[#ea4b71] hover:bg-[#ea4b71]/5 hover:text-foreground"
+                      className="rounded-lg border border-dashed border-border px-3 py-2 text-left text-xs text-muted-foreground transition-colors hover:border--brand hover:bg--brand/5 hover:text-foreground"
                     >
                       {ex}
                     </button>
@@ -238,7 +238,7 @@ export function AIGenerator() {
                     <Button
                       onClick={apply}
                       size="sm"
-                      className="bg-[#ea4b71] text-white hover:bg-[#d63d61]"
+                      className="bg--brand text-white hover:bg--brand-hover"
                     >
                       <ArrowRight className="mr-1.5 h-3.5 w-3.5" />
                       Загрузить в визуализатор

@@ -65,8 +65,8 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#top" className="flex items-center gap-2 font-semibold">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#ea4b71] text-white shadow-sm">
+        <a href="#top" className="flex items-center gap-2 font-semibold" aria-label="n8n Школа — на главную">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg--brand text-white shadow-sm">
             <Workflow className="h-5 w-5" />
           </span>
           <span className="text-base tracking-tight">
@@ -83,13 +83,13 @@ export function Header() {
                 href={link.href}
                 className={`relative rounded-md px-2.5 py-2 text-[13px] font-medium transition-colors hover:bg-accent hover:text-foreground ${
                   isActive
-                    ? 'text-[#ea4b71]'
+                    ? 'text--brand'
                     : 'text-muted-foreground'
                 }`}
               >
                 {link.label}
                 {isActive && (
-                  <span className="absolute inset-x-2 -bottom-[1px] h-0.5 rounded-full bg-[#ea4b71]" />
+                  <span className="absolute inset-x-2 -bottom-[1px] h-0.5 rounded-full bg--brand" />
                 )}
               </a>
             )
@@ -118,7 +118,7 @@ export function Header() {
               GitHub
             </a>
           </Button>
-          <Button asChild size="sm" className="bg-[#ea4b71] text-white hover:bg-[#d63d61]">
+          <Button asChild size="sm" className="bg--brand text-white hover:bg--brand-hover">
             <a href="#lessons">Начать обучение</a>
           </Button>
         </div>
@@ -151,13 +151,13 @@ export function Header() {
                     onClick={() => setOpen(false)}
                     className={`flex items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent ${
                       isActive
-                        ? 'bg-[#ea4b71]/10 text-[#ea4b71]'
+                        ? 'bg--brand/10 text--brand'
                         : 'text-foreground'
                     }`}
                   >
                     {link.label}
                     {isActive && (
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#ea4b71]" />
+                      <span className="h-1.5 w-1.5 rounded-full bg--brand" />
                     )}
                   </a>
                 )
@@ -173,7 +173,7 @@ export function Header() {
                     GitHub
                   </a>
                 </Button>
-                <Button asChild size="sm" className="bg-[#ea4b71] text-white hover:bg-[#d63d61]">
+                <Button asChild size="sm" className="bg--brand text-white hover:bg--brand-hover">
                   <a href="#lessons">Начать обучение</a>
                 </Button>
               </div>

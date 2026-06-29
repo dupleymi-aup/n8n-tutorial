@@ -99,7 +99,7 @@ export function Roadmap() {
     <section id="roadmap" className="scroll-mt-16 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#ea4b71]">
+          <p className="text-sm font-semibold uppercase tracking-wider text--brand">
             Путь развития
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -181,7 +181,7 @@ export function Roadmap() {
 
         <Reveal
           delay={0.1}
-          className="mx-auto mt-12 max-w-3xl rounded-2xl border bg-gradient-to-br from-[#fff5f7] to-background p-6 text-center dark:from-[#ea4b71]/5 sm:p-8"
+          className="mx-auto mt-12 max-w-3xl rounded-2xl border bg-gradient-to-br from-[#fff5f7] to-background p-6 text-center dark:from--brand/5 sm:p-8"
         >
           <p className="text-sm text-muted-foreground">
             Не пытайтесь пройти все уровни за неделю. Закрепляйте каждый этап

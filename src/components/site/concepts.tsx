@@ -20,7 +20,7 @@ const concepts = [
     short: 'Связанный набор узлов, выполняющий автоматизацию',
     description:
       'Workflow — это основной объект в n8n. Он представляет собой направленный граф: узлы соединены связями, по которым данные передаются от одного шага к другому. Один workflow может содержать десятки и сотни узлов, переменные, условные ветвления и циклы. Сохраняется в формате JSON, поэтому его можно экспортировать, версионировать в Git и делиться с командой.',
-    color: 'bg-[#ea4b71]/10 text-[#ea4b71]',
+    color: 'bg--brand/10 text--brand',
   },
   {
     icon: Box,
@@ -72,7 +72,7 @@ export function Concepts() {
     <section id="concepts" className="scroll-mt-16 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#ea4b71]">
+          <p className="text-sm font-semibold uppercase tracking-wider text--brand">
             Шаг 2
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">

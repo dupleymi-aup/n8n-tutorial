@@ -58,7 +58,7 @@ export function Newsletter() {
   return (
     <section
       id="newsletter"
-      className="scroll-mt-16 border-y bg-gradient-to-br from-[#ea4b71] to-[#d63d61] py-16 text-white"
+      className="scroll-mt-16 border-y bg-gradient-to-br from--brand to--brand-hover py-16 text-white"
     >
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-[1fr_auto]">
@@ -100,7 +100,7 @@ export function Newsletter() {
                 type="submit"
                 disabled={status === 'loading' || !validEmail}
                 variant="secondary"
-                className="shrink-0 bg-white text-[#ea4b71] hover:bg-white/90"
+                className="shrink-0 bg-white text--brand hover:bg-white/90"
               >
                 {status === 'loading' ? (
                   <Loader2 className="mr-1.5 h-4 w-4 animate-spin" />

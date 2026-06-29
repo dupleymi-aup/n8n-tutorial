@@ -87,8 +87,8 @@ const tools = [
   {
     name: 'n8n',
     sub: 'Open-source · Self-hosted',
-    color: 'text-[#ea4b71]',
-    badge: 'bg-[#ea4b71]/10 text-[#c43560] border-[#ea4b71]/20',
+    color: 'text--brand',
+    badge: 'bg--brand/10 text--brand-dark border--brand/20',
     highlighted: true,
   },
   {
@@ -140,7 +140,7 @@ export function Comparison() {
     <section id="comparison" className="scroll-mt-16 border-y bg-muted/30 py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#ea4b71]">
+          <p className="text-sm font-semibold uppercase tracking-wider text--brand">
             Сравнение
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -165,7 +165,7 @@ export function Comparison() {
                     <th
                       key={tool.name}
                       className={`px-4 py-4 text-center ${
-                        tool.highlighted ? 'bg-[#ea4b71]/5' : ''
+                        tool.highlighted ? 'bg--brand/5' : ''
                       }`}
                     >
                       <div className="flex flex-col items-center gap-1">
@@ -203,7 +203,7 @@ export function Comparison() {
                     </td>
                     <td
                       className={`px-4 py-3.5 ${
-                        tools[0].highlighted ? 'bg-[#ea4b71]/5' : ''
+                        tools[0].highlighted ? 'bg--brand/5' : ''
                       }`}
                     >
                       <Cell value={row.n8n} />
@@ -226,7 +226,7 @@ export function Comparison() {
           className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3"
         >
           <div className="rounded-xl border bg-card p-5">
-            <h3 className="flex items-center gap-2 text-sm font-semibold text-[#ea4b71]">
+            <h3 className="flex items-center gap-2 text-sm font-semibold text--brand">
               Выбирайте n8n, если
             </h3>
             <ul className="mt-3 space-y-1.5 text-xs text-muted-foreground">

@@ -57,7 +57,7 @@ export function FAQ() {
     <section id="faq" className="scroll-mt-16 py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#ea4b71]">
+          <p className="text-sm font-semibold uppercase tracking-wider text--brand">
             Часто задаваемые вопросы
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -80,7 +80,7 @@ export function FAQ() {
               >
                 <AccordionTrigger className="hover:no-underline">
                   <div className="flex items-center gap-3 text-left">
-                    <HelpCircle className="h-4 w-4 shrink-0 text-[#ea4b71]" />
+                    <HelpCircle className="h-4 w-4 shrink-0 text--brand" />
                     <span className="text-sm font-medium text-foreground sm:text-base">
                       {item.question}
                     </span>

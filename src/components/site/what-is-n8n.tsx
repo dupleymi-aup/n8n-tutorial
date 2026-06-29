@@ -54,7 +54,7 @@ export function WhatIsN8n() {
     <section id="what-is" className="scroll-mt-16 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#ea4b71]">
+          <p className="text-sm font-semibold uppercase tracking-wider text--brand">
             Основы
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -77,7 +77,7 @@ export function WhatIsN8n() {
                 key={feature.title}
                 className="group rounded-2xl border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#ea4b71]/10 text-[#ea4b71] transition-colors group-hover:bg-[#ea4b71] group-hover:text-white">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg--brand/10 text--brand transition-colors group-hover:bg--brand group-hover:text-white">
                   <Icon className="h-6 w-6" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground">
@@ -93,7 +93,7 @@ export function WhatIsN8n() {
 
         <Reveal
           delay={0.1}
-          className="mt-16 rounded-2xl border bg-gradient-to-br from-[#fff5f7] to-background p-8 dark:from-[#ea4b71]/5 sm:p-10"
+          className="mt-16 rounded-2xl border bg-gradient-to-br from-[#fff5f7] to-background p-8 dark:from--brand/5 sm:p-10"
         >
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
             <div>
@@ -128,7 +128,7 @@ export function WhatIsN8n() {
                   key={useCase}
                   className="flex items-start gap-3 text-sm text-foreground"
                 >
-                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#ea4b71] text-white">
+                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg--brand text-white">
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"

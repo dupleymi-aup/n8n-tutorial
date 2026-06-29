@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useRef, useEffect } from 'react'
+import { useState, useCallback, useRef, useEffect, useId } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -133,9 +133,6 @@ const presets: { name: string; nodes: NodeKind[] }[] = [
   },
 ]
 
-let idCounter = 0
-const nextId = () => `node-${++idCounter}`
-
 const iconMap: Record<string, typeof Webhook> = {
   Webhook,
   Globe: HttpIcon,
@@ -168,11 +165,15 @@ interface ExternalNode {
 }
 
 export function WorkflowBuilder() {
+  const idPrefix = useId()
+  const idCounterRef = useRef(0)
+  const nextId = useCallback(() => {
+    idCounterRef.current += 1
+    return `${idPrefix}-${idCounterRef.current}`
+  }, [idPrefix])
+
   const [nodes, setNodes] = useState<FlowNodeData[]>([
-    {
-      id: nextId(),
-      ...nodeCatalog[0],
-    },
+    { id: `${idPrefix}-0`, ...nodeCatalog[0] },
   ])
   const [running, setRunning] = useState(false)
   const [activeIdx, setActiveIdx] = useState<number | null>(null)
@@ -231,7 +232,7 @@ export function WorkflowBuilder() {
     setExecutedIdx(new Set())
     setElapsedMs(null)
     const newNodes = preset.nodes.map((kind) => {
-      const found = nodeCatalog.find((c) => c.kind === kind)!
+      const found = nodeCatalog.find((c) => c.kind === kind) ?? nodeCatalog[0]
       return { id: nextId(), ...found }
     })
     setNodes(newNodes)
@@ -349,7 +350,7 @@ export function WorkflowBuilder() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#ea4b71]">
+          <p className="text-sm font-semibold uppercase tracking-wider text--brand">
             Интерактивно
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -379,7 +380,7 @@ export function WorkflowBuilder() {
                 {aiBadge && (
                   <Badge
                     variant="outline"
-                    className="ml-2 border-[#ea4b71]/30 bg-[#ea4b71]/10 text-[#c43560]"
+                    className="ml-2 border--brand/30 bg--brand/10 text--brand-dark"
                   >
                     <Sparkles className="mr-1 h-3 w-3" />
                     AI-сгенерировано
@@ -408,7 +409,7 @@ export function WorkflowBuilder() {
                 </Button>
                 <Button
                   size="sm"
-                  className="bg-[#ea4b71] text-white hover:bg-[#d63d61]"
+                  className="bg--brand text-white hover:bg--brand-hover"
                   onClick={run}
                   disabled={running || nodes.length === 0}
                 >
@@ -437,7 +438,7 @@ export function WorkflowBuilder() {
                   key={preset.name}
                   type="button"
                   onClick={() => loadPreset(preset)}
-                  className="rounded-full border px-3 py-1 text-xs font-medium text-foreground transition-colors hover:border-[#ea4b71] hover:bg-[#ea4b71]/5 hover:text-[#ea4b71]"
+                  className="rounded-full border px-3 py-1 text-xs font-medium text-foreground transition-colors hover:border--brand hover:bg--brand/5 hover:text--brand"
                 >
                   {preset.name}
                 </button>
@@ -466,7 +467,7 @@ export function WorkflowBuilder() {
                           <div
                             className={`relative flex h-20 w-24 flex-col items-center justify-center rounded-xl border-2 bg-card shadow-sm transition-all ${
                               isActive
-                                ? 'border-[#ea4b71] shadow-md ring-4 ring-[#ea4b71]/20'
+                                ? 'border--brand shadow-md ring-4 ring--brand/20'
                                 : isExecuted
                                   ? 'border-emerald-500/40'
                                   : 'border-border'
@@ -474,8 +475,8 @@ export function WorkflowBuilder() {
                           >
                             {isActive && (
                               <span className="absolute -right-1 -top-1 flex h-3 w-3">
-                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ea4b71] opacity-75" />
-                                <span className="relative inline-flex h-3 w-3 rounded-full bg-[#ea4b71]" />
+                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg--brand opacity-75" />
+                                <span className="relative inline-flex h-3 w-3 rounded-full bg--brand" />
                               </span>
                             )}
                             {isExecuted && !isActive && (
@@ -541,7 +542,7 @@ export function WorkflowBuilder() {
                     type="button"
                     onClick={() => setShowCatalog((v) => !v)}
                     disabled={running}
-                    className="flex h-20 w-16 flex-col items-center justify-center rounded-xl border-2 border-dashed border-border text-muted-foreground transition-colors hover:border-[#ea4b71] hover:text-[#ea4b71] disabled:opacity-50"
+                    className="flex h-20 w-16 flex-col items-center justify-center rounded-xl border-2 border-dashed border-border text-muted-foreground transition-colors hover:border--brand hover:text--brand disabled:opacity-50"
                   >
                     <Plus className="h-5 w-5" />
                     <span className="mt-1 text-[10px] font-medium">узел</span>

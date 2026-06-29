@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useCallback, useContext, useState, type ReactNode } from 'react'
+import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from 'react'
 
 export interface ExternalNode {
   id: string
@@ -27,10 +27,13 @@ export function BuilderProvider({ children }: { children: ReactNode }) {
     setApplyFn(() => fn)
   }, [])
 
-  const value: BuilderContextValue = {
-    applyExternal: applyFn,
-    registerApply,
-  }
+  const value: BuilderContextValue = useMemo(
+    () => ({
+      applyExternal: applyFn,
+      registerApply,
+    }),
+    [applyFn, registerApply],
+  )
 
   return (
     <BuilderContext.Provider value={value}>

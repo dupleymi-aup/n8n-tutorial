@@ -208,7 +208,7 @@ export function Lessons() {
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#ea4b71]">
+          <p className="text-sm font-semibold uppercase tracking-wider text--brand">
             Шаг 3
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -226,7 +226,7 @@ export function Lessons() {
           <div className="rounded-xl border bg-card p-4 shadow-sm">
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-2 text-sm font-medium">
-                <BookOpen className="h-4 w-4 text-[#ea4b71]" />
+                <BookOpen className="h-4 w-4 text--brand" />
                 Прогресс обучения
               </div>
               <div className="flex items-center gap-3">
@@ -248,7 +248,7 @@ export function Lessons() {
             </div>
             <Progress
               value={totalProgress}
-              className="mt-3 h-2 [&>div]:bg-[#ea4b71]"
+              className="mt-3 h-2 [&>div]:bg--brand"
             />
             {totalProgress === 100 && (
               <p className="mt-3 text-center text-xs font-medium text-emerald-600">
@@ -272,19 +272,11 @@ export function Lessons() {
               >
                 <AccordionTrigger className="px-5 py-4 hover:no-underline">
                   <div className="flex flex-1 items-center gap-4 text-left">
-                    <span
-                      role="button"
-                      tabIndex={0}
+                    <button
+                      type="button"
                       onClick={(e) => {
                         e.stopPropagation()
                         toggle(lesson.id)
-                      }}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                          e.preventDefault()
-                          e.stopPropagation()
-                          toggle(lesson.id)
-                        }
                       }}
                       className="shrink-0 cursor-pointer outline-none"
                       aria-label={
@@ -294,14 +286,14 @@ export function Lessons() {
                       {isDone ? (
                         <CheckCircle2 className="h-6 w-6 text-emerald-500" />
                       ) : (
-                        <Circle className="h-6 w-6 text-muted-foreground/40 hover:text-[#ea4b71]" />
+                        <Circle className="h-6 w-6 text-muted-foreground/40 hover:text--brand" />
                       )}
-                    </span>
+                    </button>
                     <span
                       className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-sm font-bold ${
                         isDone
                           ? 'bg-emerald-500/10 text-emerald-600'
-                          : 'bg-[#ea4b71]/10 text-[#ea4b71]'
+                          : 'bg--brand/10 text--brand'
                       }`}
                     >
                       {String(idx + 1).padStart(2, '0')}
@@ -348,7 +340,7 @@ export function Lessons() {
                           key={stepIdx}
                           className="flex gap-3 text-sm text-foreground"
                         >
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#ea4b71]" />
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text--brand" />
                           <span className="leading-relaxed">{step}</span>
                         </li>
                       ))}
@@ -372,7 +364,7 @@ export function Lessons() {
                         className={
                           isDone
                             ? ''
-                            : 'bg-[#ea4b71] text-white hover:bg-[#d63d61]'
+                            : 'bg--brand text-white hover:bg--brand-hover'
                         }
                       >
                         {isDone ? (

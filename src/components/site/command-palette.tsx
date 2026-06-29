@@ -257,7 +257,8 @@ export function CommandPalette() {
           <div className="px-3 py-2 text-xs text-muted-foreground">
             Нажмите{' '}
             <kbd className="rounded border bg-muted px-1.5 py-0.5 font-mono text-[10px]">
-              {typeof navigator !== 'undefined' && /Mac/.test(navigator.platform)
+              {typeof navigator !== 'undefined' &&
+              /Mac/i.test(navigator.userAgent)
                 ? '⌘'
                 : 'Ctrl'}
               +K

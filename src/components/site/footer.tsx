@@ -53,7 +53,7 @@ export function Resources() {
     <section id="resources" className="scroll-mt-16 border-t bg-muted/30 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#ea4b71]">
+          <p className="text-sm font-semibold uppercase tracking-wider text--brand">
             Полезное
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -75,13 +75,13 @@ export function Resources() {
               rel="noopener noreferrer"
               className="group flex flex-col rounded-2xl border bg-card p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
             >
-              <h3 className="text-base font-semibold text-foreground group-hover:text-[#ea4b71]">
+              <h3 className="text-base font-semibold text-foreground group-hover:text--brand">
                 {resource.title}
               </h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {resource.description}
               </p>
-              <div className="mt-4 flex items-center gap-1.5 text-sm font-medium text-[#ea4b71]">
+              <div className="mt-4 flex items-center gap-1.5 text-sm font-medium text--brand">
                 <span className="font-mono">{resource.label}</span>
                 <svg
                   className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
@@ -96,7 +96,7 @@ export function Resources() {
           ))}
         </div>
 
-        <div className="mt-16 overflow-hidden rounded-3xl border bg-gradient-to-br from-[#ea4b71] to-[#d63d61] p-8 text-white sm:p-12">
+        <div className="mt-16 overflow-hidden rounded-3xl border bg-gradient-to-br from--brand to--brand-hover p-8 text-white sm:p-12">
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
             <div>
               <h3 className="text-2xl font-bold sm:text-3xl">
@@ -146,7 +146,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
           <div className="col-span-2 sm:col-span-1">
             <div className="flex items-center gap-2 font-semibold">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#ea4b71] text-white">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg--brand text-white">
                 <Workflow className="h-4 w-4" />
               </span>
               <span>n8n Школа</span>
